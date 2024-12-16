@@ -119,6 +119,7 @@ function iterateLife() {
 
 for (let i = 0; i < cellsAmount; i++) {
   let randomIndex = randomMinMax(1, WIDTH_GRID * HEIGHT_GRID);
+  if (grid[randomIndex] == undefined) continue;
   grid[randomIndex].state = "alive";
 }
 
