@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Ant Life</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+  </head>
+  <body>
+    <div class="outer_layer">
+      <div class="simulation_outer_layer">
+        <div class="simulation">
+          <canvas></canvas>
+        </div>
+      </div>
+      <div class="controle_panel">
+        <div class="rendering_speed_wrapper">
+          <label for="rendering_speed_input">Rendering Speed</label>
+          <input
+            type="range"
+            class="rendering_speed_input"
+            id="rendering_speed_input"
+            min="20"
+            max="1500"
+          />
+        </div>
+        <div class="rendering_speed_wrapper">
+          <label for="cells_amount_input">Cells Amount</label>
+          <input
+            type="range"
+            class="cells_amount_input"
+            id="cells_amount_input"
+            min="3"
+            max="3500"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="Scripts/simulation.js" type="module"></script>
+  </body>
+</html>

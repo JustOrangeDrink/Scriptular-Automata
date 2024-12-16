@@ -1,0 +1,97 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.controle_panel {
+  display: block;
+  background-color: black;
+  width: 13.6%;
+  height: 100%;
+  margin-right: 2px;
+  border: 3px solid white;
+}
+
+.rendering_speed_wrapper {
+  width: fit-content;
+  margin: 0 auto 0 auto;
+}
+
+input[type="checkbox"] {
+  margin-top: 5px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+.simulation {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  /* border: 3px solid red; */
+}
+
+.simulation_outer_layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+  border: 3px solid white;
+}
+
+.outer_layer {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 99vh;
+}
+
+label {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  margin: 3px auto 0 auto;
+  color: white;
+}
+
+/* CSS FOR RANGE INPUTS (SLIDERS). FIREFOX IS -moz AND -webkit FOR EVERYTHING ELSE*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 10rem;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: red;
+  height: 0.2rem;
+}
+input[type="range"]::-moz-range-track {
+  background: white;
+  height: 0.2rem;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: white;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+input[type="range"]::-moz-range-thumb {
+  border: 3px solid white; /*Removes extra border that FF applies */
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: black;
+  height: 0.6rem;
+  width: 0.6rem;
+}
