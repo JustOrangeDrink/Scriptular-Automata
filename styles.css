@@ -17,7 +17,7 @@ body {
   border: 3px solid white;
 }
 
-.rendering_speed_wrapper {
+.range_wrapper {
   width: fit-content;
   margin: 0 auto 0 auto;
 }
@@ -62,6 +62,30 @@ label {
   font-family: "Courier New", Courier, monospace;
   margin: 3px auto 0 auto;
   color: white;
+}
+
+.button_wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 4px 0.5px;
+}
+.button:hover {
+  background-color: rgb(30, 30, 30);
+  cursor: pointer;
+}
+.button:active {
+  background-color: rgb(80, 80, 80);
 }
 
 /* CSS FOR RANGE INPUTS (SLIDERS). FIREFOX IS -moz AND -webkit FOR EVERYTHING ELSE*/
