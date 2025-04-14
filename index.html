@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Ant Life</title>
+    <title>Scriptular Automata</title>
     <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
   </head>
   <body>
+    <script src="Scripts/simulation.js" type="module"></script>
     <div class="outer_layer">
       <div class="simulation_outer_layer">
         <div class="simulation">
@@ -16,38 +17,15 @@
       </div>
       <div class="controle_panel">
         <div class="range_wrapper">
-          <label for="width_input">Field Width</label>
-          <input
-            type="range"
-            class="width_input"
-            id="width_input"
-            min="10"
-            max="100"
-            step="1"
-            value="100"
-          />
-        </div>
-        <div class="range_wrapper">
-          <label for="height_input">Field Height</label>
-          <input
-            type="range"
-            class="height_input"
-            id="height_input"
-            min="10"
-            max="100"
-            step="1"
-            value="100"
-          />
-        </div>
-        <div class="range_wrapper">
           <label for="rendering_speed_input">Rendering Speed</label>
           <input
             type="range"
             class="rendering_speed_input"
             id="rendering_speed_input"
             min="20"
-            max="1500"
+            max="320"
             value="20"
+            step="100"
           />
         </div>
         <div class="range_wrapper">
@@ -65,18 +43,17 @@
           <input
             type="button"
             class="button spawn_button"
-            value="Add Generation"
+            value="Add More Life"
           />
         </div>
         <div class="button_wrapper">
           <input
             type="button"
             class="button kill_button"
-            value="Kill Generation"
+            value="Kill All Life"
           />
         </div>
       </div>
     </div>
-    <script src="Scripts/simulation.js" type="module"></script>
   </body>
 </html>

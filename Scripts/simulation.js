@@ -1,16 +1,29 @@
 import { gridToWorld, worldToGrid, randomMinMax } from "./utilities.mjs";
 
-const screen_width = document.getElementsByClassName("width_input")[0].value;
-const screen_height = document.getElementsByClassName("height_input")[0].value;
+const screen_width = 100;
+const screen_height = 100;
 
 const tile = 6;
 
 const renderingSpeedInput = document.getElementsByClassName(
   "rendering_speed_input"
 )[0];
+let renderingSpeed = renderingSpeedInput.value;
+let intervalId = gameLoop();
+function updateGameLoop() {
+  clearInterval(intervalId);
+  renderingSpeed = renderingSpeedInput.value;
+  intervalId = gameLoop();
+}
+renderingSpeedInput.addEventListener("input", (event) => {
+  updateGameLoop();
+});
 
-const cellsAmount =
-  document.getElementsByClassName("cells_amount_input")[0].value;
+let cellsAmountInput = document.getElementsByClassName("cells_amount_input")[0];
+let cellsAmount = cellsAmountInput.value;
+cellsAmountInput.addEventListener("input", (event) => {
+  cellsAmount = cellsAmountInput.value;
+});
 
 const spawnButton = document.getElementsByClassName("spawn_button")[0];
 const killButton = document.getElementsByClassName("kill_button")[0];
@@ -29,8 +42,6 @@ const HEIGHT =
       screen_height) /
       tile
   );
-console.log("Width: " + WIDTH);
-console.log("Height: " + HEIGHT);
 
 const WIDTH_GRID = worldToGrid(WIDTH);
 const HEIGHT_GRID = worldToGrid(HEIGHT);
@@ -149,9 +160,12 @@ function iterateLife() {
   }
   renderLife();
 }
-setInterval(() => {
-  iterateLife();
-}, renderingSpeedInput.value);
+
+function gameLoop() {
+  return setInterval(() => {
+    iterateLife();
+  }, renderingSpeed);
+}
 
 spawnButton.onclick = function () {
   spawnGeneration(cellsAmount);
